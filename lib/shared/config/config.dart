@@ -8,6 +8,6 @@ class Config {
   String get eseninBucketUrl {
     return isDev
         ? 'http://localhost:9000/dev-bucket'
-        : 'https://bucket.esenin-family.ru/esenin-family';
+        : 'https://minio.esenin-family.ru/esenin-family';
   }
 }
