@@ -3,7 +3,6 @@ import 'package:esenin_family/shared/api/esenin_family_client.dart';
 import 'package:esenin_family_client/esenin_family_client.dart';
 
 class PubModel {
-  late BuiltList<Pub> pubs;
   final client = createEseninFamilyApi();
 
   Future<BuiltList<Pub>> getList() async {

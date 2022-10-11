@@ -13,6 +13,8 @@ class EventPoster extends StatefulWidget {
 }
 
 class _TodayWidgetState extends State<EventPoster> {
+  String _activePub = 'esenin';
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -31,12 +33,23 @@ class _TodayWidgetState extends State<EventPoster> {
                 PubSelector(
                   assetName: 'esenin.svg',
                   label: 'Все бары',
-                  isActive: true,
+                  isActive: _activePub == 'esenin',
+                  onTap: () {
+                    setState(() {
+                      _activePub = 'esenin';
+                    });
+                  },
                 ),
                 ...pubs
                     .map((pub) => PubSelector(
                           assetName: pub.logo,
                           label: pub.name,
+                          isActive: _activePub == pub.id,
+                          onTap: () {
+                            setState(() {
+                              _activePub = pub.id;
+                            });
+                          },
                         ))
                     .toList()
               ]);

@@ -8,8 +8,7 @@ import 'package:provider/provider.dart';
 
 void main() => runApp(MultiProvider(providers: [
       FutureProvider<BuiltList<Pub>>(
-          create: (context) => PubModel().getList(),
-          initialData: BuiltList<Pub>([]))
+          create: (_) => PubModel().getList(), initialData: BuiltList<Pub>([]))
     ], child: const App()));
 
 class App extends StatelessWidget {
