@@ -26,11 +26,11 @@ class App extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.grey.shade900,
         colorScheme: ColorScheme.dark(
-          secondaryContainer: Colors.blueGrey.shade900,
+          secondaryContainer: Colors.blueGrey.shade700,
           onSecondaryContainer: Colors.blueGrey.shade100,
           surface: Colors.grey.shade900,
           onSurface: Colors.blueGrey.shade200,
-          surfaceVariant: Colors.grey.shade800,
+          surfaceVariant: Colors.blueGrey.shade700,
           onSurfaceVariant: Colors.grey.shade300,
         ),
       ),
@@ -72,13 +72,10 @@ class _AppRouterState extends State<AppRouter> {
           padding: const EdgeInsets.only(top: 20),
           child: _routes[_selectedIndex].widget,
         ),
-        bottomNavigationBar: NavigationBarTheme(
-          data: NavigationBarThemeData(backgroundColor: Colors.grey.shade900),
-          child: NavigationBar(
-            destinations: _routes.map((e) => e.navigationDestination).toList(),
-            selectedIndex: _selectedIndex,
-            onDestinationSelected: _onItemTapped,
-          ),
+        bottomNavigationBar: NavigationBar(
+          destinations: _routes.map((e) => e.navigationDestination).toList(),
+          selectedIndex: _selectedIndex,
+          onDestinationSelected: _onItemTapped,
         ));
   }
 }
